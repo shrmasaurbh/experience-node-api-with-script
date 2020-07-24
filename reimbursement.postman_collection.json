@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "de64b1e2-833a-4b22-8235-87c2e06fdee4",
+		"name": "reimbursement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/reimbursements/hotel/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"reimbursements",
+						"hotel",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listing",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/reimbursements?type=hotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"reimbursements"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "hotel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create(hotel)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"invoice\": 222, \"mode\": \"bus\", \"pay\": \"mobile\", \"name\": \"shama nagar\", \"amount\": \"3000\", \"from_date\": \"2020-09-01\", \"to_date\": \"2020-09-01\",\"type\":\"hotel\"}",
+							"type": "text"
+						},
+						{
+							"key": "attach",
+							"type": "file",
+							"src": "/home/craft/Pictures/aaa.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/reimbursements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"reimbursements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create(conveyance)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"invoice\": 343, \"pay\": \"mobile\", \"purpose\": \"training\", \"mode\": \"bus\", \"kms\": \"200\", \"amount\": \"3455\", \"from\": \"12:33\", \"to\": \"15:33\",\"type\":\"conveyance\"}",
+							"type": "text"
+						},
+						{
+							"key": "attach",
+							"type": "file",
+							"src": "/home/craft/Pictures/aaa.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/reimbursements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"reimbursements"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
